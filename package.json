@@ -1,0 +1,35 @@
+{
+  "name": "enterprise-admission-controller",
+  "version": "0.0.1",
+  "description": "devops",
+  "keywords": [
+    "pepr",
+    "k8s",
+    "policy-engine",
+    "pepr-module",
+    "security"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "pepr": {
+    "name": "enterprise-admission-controller",
+    "uuid": "ac44d517-725e-58f9-ab4a-04fe134c560c",
+    "onError": "reject",
+    "alwaysIgnore": {
+      "namespaces": [],
+      "labels": []
+    },
+    "includedFiles": [],
+    "env": {}
+  },
+  "scripts": {
+    "k3d-setup": "k3d cluster delete pepr-dev && k3d cluster create pepr-dev --k3s-arg '--debug@server:0' --wait && kubectl rollout status deployment -n kube-system"
+  },
+  "dependencies": {
+    "pepr": "0.23.1"
+  },
+  "devDependencies": {
+    "typescript": "5.3.3"
+  }
+}
