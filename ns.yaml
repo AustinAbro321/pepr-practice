@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pepr-demo
+  labels:
+    keep-me: please
+    add-me: ok
+    remove-me: right-now

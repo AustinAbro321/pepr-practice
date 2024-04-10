@@ -48,16 +48,16 @@ When(a.Namespace)
  */
 When(a.Namespace)
   .IsCreated()
-  .WithName("pepr-demo-2")
+  .WithName("pepr-demo")
   .Watch(async ns => {
-    Log.info("Namespace pepr-demo-2 was created.");
+    Log.info("Namespace pepr-demo-2 was updated again.");
 
     try {
       // Apply the ConfigMap using K8s server-side apply
       await K8s(kind.ConfigMap).Apply({
         metadata: {
           name: "pepr-ssa-demo",
-          namespace: "pepr-demo-2",
+          namespace: "pepr-demo",
         },
         data: {
           "ns-uid": ns.metadata.uid,
